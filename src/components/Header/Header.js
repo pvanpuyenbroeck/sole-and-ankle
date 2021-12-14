@@ -33,6 +33,7 @@ const MainHeader = styled.div`
   align-items:center;
   justify-content:center;
   height:72px;
+  
 `;
 
 const Nav = styled.nav`

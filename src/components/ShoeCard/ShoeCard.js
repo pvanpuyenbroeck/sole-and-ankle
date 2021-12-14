@@ -36,6 +36,7 @@ const ShoeCard = ({
       <Wrapper>
         <ImageWrapper>
           <Image alt="" src={imageSrc} />
+          <Sticker variant={variant}>{variant}</Sticker>
         </ImageWrapper>
         <Spacer size={12} />
         <Row>
@@ -50,18 +51,40 @@ const ShoeCard = ({
   );
 };
 
+const Sticker = styled.div`
+
+  position:absolute;
+  right:-2px;
+  top:16px;
+  color:white;
+  background-color: ${(props) => props.variant === 'on-sale' ? COLORS.primary : COLORS.secondary} ;
+  opacity: ${props => props.variant === 'default' ? 0 : 100};
+  padding:9px; 
+  border-radius:2px;
+  font-weight:${WEIGHTS.bold};
+`;
+
 const Link = styled.a`
   text-decoration: none;
   color: inherit;
+  flex:1 1 340px;
 `;
 
-const Wrapper = styled.article``;
+const Wrapper = styled.article`
+
+border-radius: 16px 16px 4px 4px;
+overflow:hidden;
+`;
 
 const ImageWrapper = styled.div`
   position: relative;
+
 `;
 
-const Image = styled.img``;
+const Image = styled.img`
+  width: 100%;
+height: 100%;
+`;
 
 const Row = styled.div`
   font-size: 1rem;
